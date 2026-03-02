@@ -8,7 +8,9 @@ function DebounceDemo(){
   const debouncedSearch = useDebounce(search, 1000);
 
   useEffect(() => {
+    if(debouncedSearch){
     console.log("Searching:",search);
+    setSearchResults(["item1","item2","item3"]);}
   },[debouncedSearch])
 
   const handleInputChange = (e) => {setSearch(e.target.value);}
@@ -23,7 +25,7 @@ function DebounceDemo(){
         <p style={{fontSize:".8rem"}}><i>Debounced Value (after 1000ms)</i></p>
         <p>Search Result:</p>
           <ul>
-            {searchResults.map((result,index) => (<li key={index}>{result}</li>))}
+            {searchResults.map((result,index) => (<li key={index}> result for <i>"{search}"</i>: {result}</li>))}
           </ul>
       </div>
     </>
