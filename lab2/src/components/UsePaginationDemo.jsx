@@ -14,20 +14,20 @@ function UsePaginationDemo(){
   return(
     <div>
       <h4>Pagination Demo</h4>
-      <div>
+      <div id="itemHeaders">
         <p>items per page: {} </p>
         <p>total items: {}</p>
       </div>
-      <ul>
-        <li></li>
+      <ul style={{listStyle:"none"}}>
+        <li>page {}: {}</li>
       </ul>
-      <div>
+      <div id="directionBtns">
         <span>previous</span>
         <p>showing {} of 13</p>
         <span>next</span>
       </div>
       <p>showing {} of {}</p>
-      <div id="pageButtons">
+      <div id="pageBtns">
         <button>1</button>
         <button>2</button>
         <button>3</button>
@@ -45,3 +45,5 @@ function UsePaginationDemo(){
     </div>
   )
 }
+
+export default UsePaginationDemo;
