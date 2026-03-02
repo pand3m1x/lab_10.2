@@ -13,11 +13,17 @@ import usePagination from '../hooks/usePagination'
 
 function UsePaginationDemo(){
 
-  const {currentPage, setCurrentPage} = usePagination({});
+  //setting up items to pages / start of Pagination function
+  const {currentPage, setCurrentPage, totalPages } = usePagination({
+    totalItems: 50,
+    itemsPerPage: 10,
+  });
+
+  
 
   return(
     <>
-      <p>Current Page: {currentPage}</p>
+      <p>{currentPage} of {totalPages}</p>
       <button onClick={() => setCurrentPage(3)}>Next Page</button>
 
     <div>

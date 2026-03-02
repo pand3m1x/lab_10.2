@@ -1,10 +1,12 @@
 import { useState } from 'react'
 
-function usePagination({ initialPage=1 }){
+function usePagination({ totalItems, itemsPerPage=10, initialPage=1 }){
 
   const [currentPage, setCurrentPage] = useState(initialPage);
+  const totalPages = Math.ceil(totalItems/itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
 
-  return{ currentPage, setCurrentPage};
+  return{ currentPage, setCurrentPage, totalPages};
 }
 
 export default usePagination
