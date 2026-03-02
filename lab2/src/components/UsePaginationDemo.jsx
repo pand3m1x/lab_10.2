@@ -14,6 +14,7 @@ import usePagination from '../hooks/usePagination'
 function UsePaginationDemo(){
 
   //the ammount of items to paginate through
+  
   const items = Array.from({ length: 100 }, (_,i) => i+1);
   //setting up items to pages / start of Pagination function
   const {currentPage, setCurrentPage, totalPages, startIndex, endIndex } = usePagination({
@@ -21,12 +22,15 @@ function UsePaginationDemo(){
     itemsPerPage: 10,
   });
 
-  
+  const currentItems = items.slice(startIndex,endIndex+1)
 
   return(
     <>
       <p>Start: {startIndex}</p>
       <p>End: {endIndex}</p>
+      <ul>
+        {currentItems.map(item => (<li key={item}>{item}</li>))}
+      </ul>
       <p>{currentPage} of {totalPages}</p>
       <button onClick={() => setCurrentPage(currentPage + 1)}>Next Page</button>
 
