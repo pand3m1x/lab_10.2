@@ -1,5 +1,10 @@
 * {
+  margin:1px;
+}
+
+div {
   margin:20px;
+  padding:5px;
 }
 
 #demoBox {
