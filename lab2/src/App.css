@@ -2,7 +2,22 @@
   margin:20px;
 }
 
-#itemHeaders{
+#demoBox {
+  width:500px;
+}
+
+#indexLine{
+  display:flex;
+  justify-content:space-between;
+}
+
+#dirBtn{
+  display:flex;
+  justify-content: space-between;
+}
+
+
+/* #itemHeaders{
   display:flex;
   justify-content: space-around;
 }
@@ -14,7 +29,7 @@
 
 button #directionBtns {
   width: 10px;
-}
+} */
 
 /* #root {
   max-width: 1280px;

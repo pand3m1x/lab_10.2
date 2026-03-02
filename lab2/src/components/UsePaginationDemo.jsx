@@ -26,14 +26,21 @@ function UsePaginationDemo(){
   console.log("Index", {startIndex,endIndex})
   return(
     <>
-      <p>Start: {startIndex +1}</p>
-      <p>End: {endIndex}</p>
-      <ul>
-        {currentItems.map(item => (<li key={item}>item: {item}</li>))}
-      </ul>
-      <p>{currentPage} of {totalPages}</p>
-      <button onClick={prevPage}>Previous Page</button>
-      <button onClick={nextPage}>Next Page</button>
+      <div id="demoBox">
+        <h2>Pagination Demo</h2>
+        <div id="indexLine">
+          <p>Start: {startIndex +1}</p>
+          <p>End: {endIndex}</p>
+        </div>
+        <ul>
+          {currentItems.map(item => (<li key={item}>item: {item}</li>))}
+        </ul>
+        <p>{currentPage} of {totalPages}</p>
+        <div id="dirBtn">
+          <button onClick={prevPage}>Previous Page</button>
+          <button onClick={nextPage}>Next Page</button>
+        </div>
+      </div>
     </>
   )
 }
