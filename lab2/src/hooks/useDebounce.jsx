@@ -11,10 +11,23 @@ import { useState,useEffect } from 'react'
 // canNextPage
 // canPrevPage
 
-function useDebounce( value,delay ){
-  const [ debouncedValue,setDebouncedValue ]
 
-  return();
+//delay hook 
+
+function useDebounce( value,delay ){
+  const [ debouncedValue,setDebouncedValue ] = useState(value);
+  
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay );
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value,delay]);
+
+  return debouncedValue;
 }
 
-export function useDebounce
+export default useDebounce
