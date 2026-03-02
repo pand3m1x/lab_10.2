@@ -1,3 +1,5 @@
+import usePagination from '../hooks/usePagination'
+
 // currentPage
 // totalPages
 // startIndex
@@ -11,7 +13,13 @@
 
 function UsePaginationDemo(){
 
+  const {currentPage, setCurrentPage} = usePagination({});
+
   return(
+    <>
+      <p>Current Page: {currentPage}</p>
+      <button onClick={() => setCurrentPage(3)}>Next Page</button>
+
     <div>
       <h4>Pagination Demo</h4>
       <div id="itemHeaders">
@@ -43,6 +51,7 @@ function UsePaginationDemo(){
         <button>13</button>
       </div>
     </div>
+    </>
   )
 }
 
