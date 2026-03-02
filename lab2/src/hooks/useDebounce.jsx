@@ -1,3 +1,5 @@
+import { useState,useEffect } from 'react'
+
 // currentPage
 // totalPages
 // startIndex
@@ -9,3 +11,10 @@
 // canNextPage
 // canPrevPage
 
+function useDebounce( value,delay ){
+  const [ debouncedValue,setDebouncedValue ]
+
+  return();
+}
+
+export function useDebounce
